@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.querySelector(".products-grid").innerHTML= productsHtml;
+document.querySelectorAll(".js-add-to-cart").forEach((button)=>{
+button.addEventListener('click',()=>{
+    let productId= button.dataset.productId;
+    
+  let matchingitems;
+  cart.forEach((cartitems)=>{
+    if(cartitems.productId===productId){
+      matchingitems=cartitems;
+
+    };
+   
+  });
+  if(matchingitems){
+    matchingitems.quantity+=1;
+  }
+  else{
+    cart.push({
+      productId:productId,
+      quantity:1,
+    });
+    
+  }
+console.log(cart);
+  let cartcount=0;
+  cart.forEach((cartitems)=>{
+    cartcount+=cartitems.quantity;
+  })
+  document.querySelector(".cart-quantity").innerHTML= cartcount;
+
+});
+})
+    </script>
+</body>
+</html>

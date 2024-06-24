@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fetchretry(mretries){
+            
+            let holddata=[];
+            let retry=0;
+            const fetchfunc= fetch(
+                "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json"
+            );
+            fetchfunc.then((response)=>{
+
+                return response.json();
+            }).then((data)=>{
+                holddata=data;
+                holddata.forEach((e)=>{
+                    console.log(e);
+                })
+            })
+            .catch((retry)=>{
+               retry++; 
+               if(retry<=mretries){                             
+                console.log(`Request failed. Retrying (${retries}/${maxRetries})...`);
+
+                fetchfunc();
+               }
+               else{
+                console.log("failed");
+
+               }
+               fetchfunc();
+            })
+        }
+        fetchretry(3);
+   
+
+
+    </script>
+</body>
+</html>

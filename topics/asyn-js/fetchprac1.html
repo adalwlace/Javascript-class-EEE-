@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let arr=[];
+        // let fetchap=fetch(
+        //     "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json"
+        // );
+        // fetchap.then((value)=>{
+        //     return value.json();
+        // }).then((response)=>{
+        //     arr=response;
+        //     arr.forEach((e)=>{
+        //         console.log(e.name);
+        //     })
+        // })
+
+        let arr = [];
+let fetchap = fetch(
+    "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json"
+);
+
+fetchap.then((value) => {
+    if (!value.ok) {
+        throw new Error('Network response was not ok ' + value.statusText);
+    }
+    return value.json();
+}).then((response) => {
+    arr = response;
+    arr.forEach((e) => {
+        console.log(e.name);
+    });
+
+    // Assuming we need details for the first product
+    if (arr.length > 0) {
+        let firstProductId = arr[0].id;
+        return fetch(`let fetchapi=fetch("https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json`);
+    } else {
+        throw new Error('No products found');
+    }
+}).then((detailsResponse) => {
+    if (!detailsResponse.ok) {
+        throw new Error('Network response was not ok ' + detailsResponse.statusText);
+    }
+    return detailsResponse.json();
+}).then((productDetails) => {
+    console.log('Details for the first product:', productDetails);
+}).catch((error) => {
+    console.error('There has been a problem with your fetch operation:', error);
+});
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #inpbox {
+            padding: 14px;
+        }
+
+        #dateid {
+            height: 44px;
+        }
+
+        #pushbtn {
+            background-color: green;
+            color: white;
+            padding: 12px;
+            width: 90px;
+            height: 46px;
+            border: none;
+        }
+
+        .delbtn {
+            background-color: red;
+            color: white;
+            padding: 12px;
+            width: 90px;
+            height: 46px;
+            border: none;
+        }
+
+        #tasks {
+            padding: 30px 20px;
+            width: 100%;
+        }
+
+        .task0 {
+            height: 50px;
+            width: 100%;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            /* justify-content: space-between; */
+        }
+    </style>
+</head>
+
+<body>
+    <h2>TODO LIST</h2>
+    <div class="container">
+        <div id="newtask">
+            <input type="text" id="inpbox" placeholder="enter task">
+            <input type="date" id="dateid" placeholder="date">
+            <button id="pushbtn">ADD</button>
+        </div>
+        <div id="tasks"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inpbox = document.getElementById('inpbox');
+            const datebox = document.getElementById('dateid');
+            const pushbtn = document.getElementById('pushbtn');
+            const tasksDiv = document.getElementById('tasks');
+            const tasks = [];
+
+            pushbtn.addEventListener('click', () => {
+                const taskText = inpbox.value;
+                const taskDate = datebox.value;
+                if (taskText && taskDate) {
+                    const task = { text: taskText, date: taskDate, id: Date.now() };
+                    tasks.push(task);
+                    renderTasks();
+                    inpbox.value = '';
+                    datebox.value = '';
+                } else {
+                    alert("Please enter a task and select a date");
+                }
+            });
+
+            function renderTasks() {
+                tasksDiv.innerHTML = '';
+                tasks.forEach((task) => {
+                    const taskItem = document.createElement('div');
+                    taskItem.classList.add('task0');
+                    taskItem.setAttribute('data-id', task.id);
+
+                    const taskContent = document.createElement('span');
+                    taskContent.textContent = `${task.text}`;
+                    taskItem.appendChild(taskContent);
+
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = 'Delete';
+                    deleteButton.classList.add('delbtn');
+                    deleteButton.addEventListener('click', () => {
+                        const taskIndex = tasks.findIndex(t => t.id === task.id);
+                        tasks.splice(taskIndex, 1);
+                        renderTasks();
+                    });
+
+                    taskItem.appendChild(deleteButton);
+                    tasksDiv.appendChild(taskItem);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Let's change the background color </h2>
+    <button class="start">start</button>
+    <button class="stop">stop</button>
+
+
+    <!-- show real time clock in nepali format -->
+    <!-- <h2 id="hi">DATE TODAYS</h2>
+    <p id="date"></p> -->
+    <script>
+
+        let startbtn=document.querySelector(".start");
+        let randomColor=function(){
+            let num="0123456789ABCDEF";
+            let color="#";
+            for (i=0;i<6;i++){
+                color+=num[Math.floor(Math.random()*16)];
+            }
+            return color;
+        }
+        let change;
+        startbtn.addEventListener("click",()=>{
+        change=setInterval(()=>{
+                document.body.style.backgroundColor=randomColor();
+            },1000);
+        });
+
+
+        let stopbtn=document.querySelector(".stop");
+        stopbtn.addEventListener("click",()=>{
+            clearInterval(change);
+            change=null;
+            // document.body.style.backgroundColor="white";
+        })
+
+
+
+
+
+
+
+        // let todaysdate = document.getElementById("date");
+        // todaysdate.innerHTML = Date();
+
+
+
+    </script>
+
+</body>
+
+</html>

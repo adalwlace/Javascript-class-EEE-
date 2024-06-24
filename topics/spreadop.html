@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //... (spread operator)
+        let arr0=[1,2,3];
+        let copy=[...arr0,"hey","bye"];
+        console.log(copy);
+        //km<=>mile
+        //bmi
+
+        //some method- searches element acc to givn condition,returns it (once) and stops
+        let arr1=[1,2,3,4,5,10,11,12,13,14];
+        let result=arr1.some((a)=>{
+            console.log(a);
+            return a==10;
+
+        })
+        console.log(result);
+    </script>
+</body>
+</html>

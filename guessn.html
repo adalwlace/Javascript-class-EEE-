@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            height: 100vh;
+            /* padding: 20px; */
+            /* position: relative; */
+        }
+        .inp,.btn{
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" class="inp" id="inpu" placeholder="enter number">
+    <button onclick="guess()" class="btn">guess</button>
+    <p id="msg"></p>
+</body>
+<script>
+    var a=1;
+    var b=100;
+    var r=(b-a)*Math.random();
+    r=Math.floor(r);
+    // console.log(r);
+    var count=0;
+
+    // console.log(u);
+    var u;
+    
+    function guess(){
+    var u=document.getElementById('inpu').value;
+    if(u<r){
+        alert("your guess is less");
+        count++;
+    }
+    else if(u>r){
+    alert("your guess is more");
+    count++;
+    }
+    else if(u==r){
+    alert("your guess is correct");
+    var message=document.getElementById("msg").innerHTML=`you guessed the number in ${count} tries`;
+    }
+}
+</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mystyle {
+            width: 200px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="btn1()">replace</button>
+    <button id="rem">remove</button>
+
+    <div id="el">
+        <p class="mystyle"></p>
+    </div>
+
+
+    <!-- <button onclick="replacepname()">replace</button> -->
+
+    <script>
+
+        function btn1() {
+            document.querySelector("p").classList.replace("mystyle", "hii");
+        }
+        var rem = document.querySelector("#rem");
+        rem.addEventListener("click", btn1);
+
+
+        // function btn2(){
+        //     document.querySelector("p").classList.remove("mystyle");
+        // }
+
+        // var rem=document.querySelector("#rem");
+        // rem.addEventListener("click",btn2);
+
+        // var elem=document.querySelector("#el");
+
+        // var bod=document.createElement("p"); //create element
+        // elem.append(bod);
+        // bod.classList.add("bodyp"); //give class to created element *
+        // // bod.classList.remove();
+
+        // function replacepname(){
+
+        //     bod.classList.replace("arg");
+        // }
+    </script>
+</body>
+
+</html>

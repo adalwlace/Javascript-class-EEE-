@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // obj lai {key:value} ; attribute and method(func)
+        const student1 = {
+            name: "shrey",
+            age: "21",
+            location: "ktm",
+            hey: function () {
+                //method
+                console.log("hiiiiiiiiiii");
+
+            }
+        };
+        student1.hey();
+
+
+        // or 
+
+        let student2 = new Object(); //Object nai lekhne
+        student2.name = "meyi";
+        student2.age = "27";
+        student2.location = "usa";//attribute
+        console.log(student2);
+
+        //this
+        const student3 = {
+            name: "rey",
+            age: "12",
+            location: "pkhr",
+            hey: function () {
+                //method
+                console.log(`my name is ${this.name}`);
+                //this refers to objects depending on hoe it is used k reference garne
+            }
+        };
+        student3.hey();
+        // console.log(this); whole window lai reference garxa
+
+        //destructuring - packing and unpacking values
+        console.log("-->destructuring");
+        let obj1={
+            "name":"Sula",
+            "roll":"26"
+        };
+        const {name,roll} =obj1;
+        console.log(name);
+        console.log(roll);
+         //we can copy obj using 2 ways:
+         let obj0={
+             name:"shrey",
+             address:"ktm"
+            }
+            
+        //spread operator
+        let newO1={...obj0};
+        console.log(newO1);
+
+        //object.assign()
+        let newO2={};
+        Object.assign(newO2,obj0);
+        console.log(newO2);
+
+    </script>
+</body>
+</html>

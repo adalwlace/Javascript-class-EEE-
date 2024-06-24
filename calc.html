@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+
+        * {
+            font-family: "Orbitron", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #44474a;
+        }
+
+        .calculator {
+            width: 200px;
+            height: 268px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 20px #fff, 10px 10px 20px rgba(0, 0, 0, .5);
+            /* text-align: center; */
+        }
+
+        .calc-screen {
+            margin: 10px;
+            padding: 10px;
+            color: #fff;
+            font-size: 60px;
+            line-height: 80px;
+            text-align: right;
+            border: 1px solid #fff;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 6px;
+            color: #fff;
+            font-size: 10px;
+            line-height: 80px;
+            text-align: right;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            color: black;
+        }
+        .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+        button {
+            height: 90%;
+            margin: 2px;
+            /* padding: 4px; */
+        }
+
+        .digits {
+            padding: 4px;
+            margin: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-sm-10 calculator mt-5 d-flex justify-content-center p-5 ">
+        <div class="col-sm-6 calc-screen p-4 m-3">
+            <input type="text" class="field" id="" placeholder="0">
+        </div>
+        <div class="container-sm-10 digits">
+            <div class="container-sm-10 m-4 p-3 d-block row">
+                
+                    <button class="on-btn">ON</button>
+                    <button class="zero-btn">0</button>
+                    <button class="ce-btn">CE</button>
+                    <!-- <button class="mr-btn">MR</button> -->
+                    <button class="off-btn">OFF</button>
+                
+            </div>
+            <div class="container-sm-10 d-block row">
+                
+                    <button id="7-btn">7</button>
+                    <button id="8btn">8</button>
+                    <button class="9-btn">9</button>
+                    <button class="per-btn">%</button>
+                    <button class="equal-btn">=</button>
+                
+            </div>
+            <div class="container-sm-10 d-block row">
+                
+                    <button class="4-btn">4</button>
+                    <button class="5-btn">5</button>
+                    <button class="6-btn">6</button>
+                    <button class="mul-btn">x</button>
+                    <button class="div-btn">/</button>
+                
+            </div>
+            <div class="container-sm-10 d-block row">
+                
+                    <button class="1-btn" onclick="">1</button>
+                    <button class="2-btn">2</button>
+                    <button class="3-btn">3</button>
+                    <button class="plus-btn">+</button>
+                    <button class="sub-btn">-</button>
+               
+            </div>
+            <!-- <div class="container-sm-10 d-block row">
+                
+                    <div class="col">
+                        <button class="0-btn">0</button>
+                        <button class="xx-btn">x!</button>
+                        <button class="exp-btn">^</button>
+                        <button class="ncr-btn">nCr</button>
+                        <button class="ac-btn">AC</button>
+                        <button class="del-btn">DEL</button>
+                    </div>
+                
+            </div> -->
+        </div>
+
+
+    </div>
+    <script>
+        //assignment: simple 
+let num1= parseInt(prompt("Enter the first number: "));
+let num2=prompt("Enter the second number: ");
+let operator=prompt("enter +,-,*,/");
+switch(operator){
+    case "+":
+        console.log(num1+num2);
+        break;
+    case "-":
+
+}
+
+console.log(num1);
+console.log(num2);
+    </script>
+</body>
+
+</html>

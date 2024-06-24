@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .all {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        #date, #text {
+            height: 47px;
+            width: 200px;
+            font-size: large;
+            border-radius: 3px;
+        }
+        #date {
+            padding-left: 15px;
+            cursor: pointer;
+        }
+        #btn {
+            background-color: green;
+            color: white;
+            font-size: large;
+            height: 50px;
+            width: 150px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        #btn:hover {
+            background-color: darkgreen;
+            color: black;
+        }
+        .delete {
+            background-color: red;
+            color: white;
+            font-size: large;
+            height: 50px;
+            width: 150px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .delete:hover {
+            background-color: darkred;
+            color: black;
+        }
+        .task-item {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>To-do list</h2>
+    <div class="all">
+        <textarea id="text">nbmb</textarea>
+        <input type="date" id="date">
+        <button id="btn">Add</button>
+    </div>
+    <div id="activity" class="activity"></div>
+
+    <script>
+        
+        const textInput = document.getElementById("text");
+        const btn = document.getElementById("btn");
+        const dateInput = document.getElementById("date");
+        const activityDiv = document.getElementById("activity");
+
+        
+        btn.addEventListener('click', () => {
+            const task = textInput.value.trim();
+            const date = dateInput.value;
+            if (task === '' || date === '') {
+                alert("Please enter all the required fields");
+                return; 
+            }
+
+           
+            const taskItem = document.createElement('div');
+            taskItem.className = 'task-item';
+
+         
+            const taskText = document.createElement('span');
+            taskText.textContent = `${task} ${date}`;
+            const deleteButton = document.createElement('button');
+            deleteButton.className = 'delete';
+            
+            deleteButton.textContent = 'Remove';    
+            
+         
+            deleteButton.onclick = function() {
+                activityDiv.removeChild(taskItem);
+            };
+
+            taskItem.appendChild(taskText);
+            taskItem.appendChild(deleteButton);
+        
+            activityDiv.appendChild(taskItem);
+            textInput.value = '';
+            dateInput.value = '';
+        });
+    </script>
+</body>
+</html>

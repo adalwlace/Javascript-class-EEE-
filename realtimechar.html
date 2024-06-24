@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: red;
+            display: flex;
+            justify-content: center;
+           align-items: center;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            background-color: aqua;
+            width: 400px;
+            border-radius: 6px;
+            padding: 10px;
+            height: 180px;
+           /* justify-content: center; */
+           align-items: center;
+        }
+        #tarea{
+           /* width:800px ; */
+           height: 100px;
+        }
+        #count{
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h4>real-time character counter</h4>
+        <div>
+        <textarea type="text" name="" id="tarea" placeholder="Enter your text" style="width:380px"></textarea>
+        </div>
+        <div id="count">
+            
+            <span id="rem">
+                <!-- Remaining: -->
+
+            </span>
+            <span>
+                remaining
+            </span>
+            <span id="total">
+                <!-- Total characters: -->
+            
+                /140
+            </span>
+        </div>
+    </div>
+
+    <script>
+        var aa;
+        
+        function countCharacters(e) {
+
+            var textEntered,tCounting,tcounter, countRemaining, Remcounter;
+            textEntered = document.querySelector('#tarea').value;
+            // tCounter=textEntered.length();
+            // tCounting=document.querySelector('#total');
+            // tCounting.textContent=tcounter;
+
+
+            Remcounter = (140 - (textEntered.length));
+            countRemaining = document.querySelector('#rem');
+            countRemaining.textContent = Remcounter;
+        }
+        aa = document.querySelector('#tarea');
+        aa.addEventListener('keyup', countCharacters);
+
+        // function container() {
+        //     return `<div class="insideCon">
+        // <textarea type="text" name="" id="tarea" placeholder="Enter your text"></textarea>
+        // <div id="count">
+        //     <span id="total">Total characters:"${totalchar}"</span>
+        //     <span id="rem">Remaining:"${remchar}"</span>
+        // </div>  
+        //           </div>`;
+        // }
+
+
+        // function appendS() {
+        //     let myContainer = document.querySelector("#count");
+        //     var textEntered, countRemaining, counter;
+        //     textEntered = document.querySelector('#tarea').value;
+        //     counter = (140 - (textEntered.length));
+        //     countRemaining = document.querySelector('remchar');
+        //     countRemaining.textContent = counter;
+
+        // }
+        // appendS();
+    </script>
+</body>
+
+</html>

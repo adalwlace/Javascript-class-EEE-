@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+        color: navy;
+
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .userBox{
+        background-color: rgba(150, 217, 241, 0.5);
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 4px;
+        padding: 6px;
+        border: none;
+        border-radius: 6px;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="arra">
+        <h1>Our Users</h1>
+    </div>
+    
+    <script>
+        // fetch data from the given API using async and await and design as your wish.
+        //fetching array
+        async function fetchdata(){
+            try{
+                let response=await fetch("https://jsonplaceholder.typicode.com/posts");
+                let data= await response.json();
+                fetchingArr(data);
+                // console.log(data);
+            }
+            catch(error){
+                console.log(error);
+            }
+        }
+
+        function fetchingArr(items){
+            let arrBox=document.querySelector('.arra');
+            items.forEach(e=>{
+            arrBox.innerHTML+=
+            `<div class="content">
+                <div class="userBox">
+                    <h5>${e.id}</h5>
+                    <h4>User ID: ${e.userId}</h4>
+                    <h4>${e.title}</h4>
+                    <p>${e.body}</p>
+                </div>
+            </div>
+            
+            `
+            })
+           
+        }
+
+        fetchdata();
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p></p> -->
+    <script>
+let num1= parseInt(prompt("Enter the first number: "));
+let num2=parseInt(prompt("Enter the second number: "));
+let operator=prompt("enter +,-,*,/");
+switch(operator){
+    case "+":
+        document.write("the result is :"+  (num1+num2) );
+        break;
+    case "-":
+        document.write("the result is :"+(num1-num2) );
+        break;
+    case "*":
+        document.write("the result is :"+(num1*num2) );
+        break;
+    case "/":
+        if (num2==0) {
+            alert ("Error! Division by zero is not allowed.");
+        } else{
+            document.write("the result is :"+(num1/num2) );
+        }
+        break; 
+}
+console.log(num1);
+console.log(num2);
+    </script>
+</body>
+</html>

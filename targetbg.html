@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .colorswitcher{
+            display: flex;
+            justify-content: center;
+            gap: 2px;
+        }
+        #red{
+            background-color: red;
+            border:none;
+            width: 250px;
+            height: 250px;
+        }
+        #blue{
+            background-color: blue;
+            border:none;
+            width: 250px;
+            height: 250px;
+        }
+        #green{
+            background-color: green;
+            border:none;
+            width: 250px;
+            height: 250px;
+        }
+        #yellow{
+            background-color:yellow;
+            border:none;
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+   <div class="colorswitcher">
+    <div class="box" id="red" >r</div>
+    <div class="box" id="blue" >b</div>
+    <div class="box" id="green" >g</div>
+    <div class="box" id="yellow">y</div>
+   </div>
+</body>
+<script>
+    // const colors=document.querySelector(".colorswitcher");
+    // colors.addEventListener("click",function(event){
+    //     console.log(event.target.id);
+    // });
+    //parent lai target garda child le kun kun kaam gariraxa dekhauxa
+
+    const boxes=document.querySelectorAll(".box");
+    boxes.forEach((ciao)=>{
+        ciao.addEventListener('click',function(event){
+            if(event.target.id=='red'){
+            document.body.style.backgroundColor=event.target.id;
+            }
+            else if(event.target.id=='blue'){
+                document.body.style.backgroundColor=event.target.id;
+            }
+        else if(event.target.id=='green'){
+            document.body.style.backgroundColor=event.target.id;
+        }
+        else{
+            document.body.style.backgroundColor=event.target.id;
+        }
+        
+    });
+});
+
+
+// const num=[1,2,3,4];
+// num.forEach((eachn)=>{
+//     console.log(eachn);
+// })
+
+
+
+
+
+    //color switcher
+    // function redfunction(){
+    //     document.body.style.backgroundColor="red";
+    // }
+    // function bluefunction(){
+    //     document.body.style.backgroundColor="blue";
+    // }
+    // function greenfunction(){
+    //     document.body.style.backgroundColor="green";
+    // }
+    // function yellowfunction(){
+    //     document.body.style.backgroundColor="yellow";
+    // }
+
+
+
+</script>
+</html>

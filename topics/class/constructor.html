@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  Define a class Person with a constructor that takes name and age parameters. Add methods greet and haveBirthday where greet logs a greeting message and haveBirthday increments the age by 1 and logs the new age.
+
+        class Person{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+            greet(){
+                console.log(`hellouuuu ${this.name}`);
+            }
+            haveBirthday(){
+                this.age+=1;
+                console.log(`You are ${this.age} years old now`);
+
+            }
+        }
+        const person= new Person('micah',11);
+        person.greet();
+        person.haveBirthday();
+    </script>
+</body>
+</html>

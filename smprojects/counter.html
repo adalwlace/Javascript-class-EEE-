@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        .container{
+            top: 20px;
+            /* display: flex; */
+            width:50%;
+            /* justify-content: center; */
+            /* border: 1px solid black; */
+        }
+        .line1{
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        .line1 button , #reset{
+            width: 88px;
+            height: 40px;
+            color: white;
+            background-color: green;
+            padding: 5px;
+            border: none;
+            border-radius: 4px; 
+        }
+        .reset-line{
+            display: flex;
+            justify-content: center;
+            margin: 8px;
+            /* align-items: center; */
+        }
+        
+        .counter{
+            background-color: rgb(151, 138, 138,0.8);
+            width: 100px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            padding: 5px 4px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="line1">
+            <button id="plus">+</button>
+            <div class="counter">0</div>
+            <button id="minus">-</button>
+        </div>
+        <div class="reset-line">
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    
+    let counterscr=document.querySelector(".counter");
+    let plusscr=document.querySelector("#plus");
+    let minusscr=document.querySelector("#minus");
+    let resetscr=document.querySelector("#reset");
+    let count=0;
+    
+
+    plusscr.addEventListener("click",()=>{
+        count++;
+        counterscr.textContent=count;
+    })
+
+    minusscr.addEventListener("click",()=>{
+        count--;
+        counterscr.textContent=count;
+    })
+
+    resetscr.addEventListener("click",()=>{
+        count=0;
+        counterscr.textContent=count;
+    })
+
+</script>
+</html>

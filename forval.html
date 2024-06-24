@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+        }
+
+        form {
+            width: 30%;
+            /* display: flex; */
+            /* flex-direction: column; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <form id="formm">
+        <label for="FirstName">First Name :</label>
+        <input type="text" name="FirstName" id="fir" placeholder="First Name" />
+        <br> <br>
+        <label for="LastName">Last Name :</label>
+        <input type="text" id="las" name="LastName" placeholder="Last Name">
+        <br><br>
+        <button class="sub" type="submit">Submit</button>
+    </form>
+    <div class="error"></div>
+    <div class="op"></div>
+
+    <script>
+        var form = document.querySelector("#formm");
+        form.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const first = document.querySelector("#fir").value;
+            const last = document.querySelector("#las").value;
+            const err = document.querySelector(".error");
+            const outp = document.querySelector(".op");
+
+
+            if (first === "") {
+                err.innerHTML = "Please fill your first name";
+                err.style.color = "red";
+                return;
+            }
+            else if (last === "") {
+                err.innerHTML = "please fill your last name";
+                err.style.color = "red";
+                return;
+            }
+            else {
+                outp.innerHTML = `Welcome, ${first} ${last}`;
+                err.textContent = "";
+            }
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

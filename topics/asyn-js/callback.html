@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //callback =>function passing as an arg to another function 
+        // function fir(){
+        //     console.log("first");
+        // }
+        // function sec(callback){
+        //     console.log("sec");
+        //     callback();
+        // }
+        // sec(fir);
+
+        // function sum(callback){
+        //     let ans=5+5;
+        //     callback(ans);
+    
+        // }
+        // function result(ans){
+        //     document.body.innerHTML=ans;
+        // }
+        // sum(result);
+
+        // function sq(a,callback){
+        //     let ans=a*a;
+        //     callback(ans);
+        // }
+        // function res(ans){
+        //     console.log(ans);
+        // }
+        // sq(5,res);
+
+        //Write a JavaScript function that takes a callback and invokes it after a delay of 2 second.
+        function callf(callback){
+            setTimeout(() => {
+                callback(reply);
+            }, 2000);
+        }
+        function reply(){
+            console.log("first");
+        }
+        callf(reply);
+       
+    </script>
+</body>
+</html>

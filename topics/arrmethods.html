@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // array lai [] 
+        let arr = new Array(1, 2, 3, "h", 8, 4);
+        console.log(arr);
+
+        arr.push(4); //it inserts data at the end of array
+        console.log(arr)
+        arr.pop(); //it pops the data from last and can be assigned to any variable
+        console.log(arr);
+        arr.unshift(10);//it inserts data at the start of array
+        console.log(arr);
+        arr.shift();//it removes data inserted at the start of array
+        console.log(arr);
+        let assign = arr.indexOf("h");// gives index of the array element; if not found, returns -1
+        console.log(assign);
+        let assign0 = arr.includes(3, 4);//seaches if the element is in the array; can also provide from where to search if u want
+        console.log(assign0);
+        // let assign1=arr.find((e,index)=>{
+        // console.log(index);
+        // });
+
+        //slice - extract, og arr bata change gardaina, temp banayera change 
+        //(inclusive, exclusive) - (1,5-1)
+
+        // let arr=[1,2,3,4,0,4,5];
+        // let sarr=arr.slice(1,5); //2,3,4,0
+        // console.log(sarr);
+        // console.log(arr);// no change in og array
+
+        //splice - replace, og arr bata change gardinxa, replaces too
+        // let arr1=[1,2,3,4,5,6];
+        // // arr1.splice(1,3); //1,5,6
+        // arr1.splice(1,3,"a");//replaces 2,3,4 with "a"
+
+        // console.log(arr1);
+
+        let smthg='string';//string bhako bhayera Array. nai garnu pareko 
+        let fromarr=Array.from(smthg);
+        console.log(fromarr);//converts anything to array
+
+        //typeConversion
+        //Dates
+        //destructuring
+        
+        export {arr};
+
+
+
+
+
+    </script>
+</body>
+
+</html>

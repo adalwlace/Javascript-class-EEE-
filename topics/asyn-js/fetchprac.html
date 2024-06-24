@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           //json <response>
+        let arr=[];
+        let fetchpromises=fetch(
+            "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json"
+        ); //promise -->response
+        fetchpromises.then((Resp)=>{
+            // console.log(Resp);
+            return Resp.json();//response lai json le nikalyo
+        }).then((value)=>{
+            arr=value;
+            uicontent(arr);
+            
+            // arr.forEach((e) => {
+            //     console.log(e.name);
+            // });
+            // console.log(arr);//local array ma lyayo value bata nikalera
+        })
+        //200 - status is ok
+        //404 - not found
+        //promise le response --> 
+     function uicontent(arr){
+        let ul= document.createElement("ul");
+        arr.forEach((e)=>{
+            let li=document.createElement("li");
+            ul.appendChild(li);
+            li.textContent=e.name;
+        })
+            // console.log(li);
+            document.body.appendChild(ul);
+     }
+    </script>
+</body>
+</html>

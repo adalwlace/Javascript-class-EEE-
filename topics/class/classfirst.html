@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- class => methods, constructor, this, new 
+    combination of method , object
+    -->
+    <script>
+        //this 
+        // let obj={
+        //     name: "shrey",
+        //     address:'ktm',
+        //     age:"21",
+
+        //     greet:function(){
+        //         console.log(`hi, i am ${this.name}`);
+        //     }
+        // }
+        // obj.greet();
+
+        //class - PascalCase, single consdtructor and many methods
+        //constructor is special func created when a obj is created
+
+        class Person{//class
+            constructor(name,age){//constructor 
+                this.name=name;
+                this.age=age;
+            }
+            display(){
+                console.log(`my name is ${this.name}. i am ${this.age} years old.`);
+            }
+            
+        }
+        let obj1=new Person('mira',20); //creating obj
+        obj1.display();
+        let obj2=new Person('akash',23);
+        obj2.display();
+
+
+
+    </script>
+</body>
+</html>

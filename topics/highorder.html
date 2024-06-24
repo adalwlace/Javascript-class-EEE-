@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //foreach - original variable mai sab kaam garnu parxa
+        let list1 = [1, 2, 3, 4, 5];
+        list1.forEach((a) => {
+            console.log(a);
+        })
+        console.log("map");
+        //map - new variable banayera value assign garna milxa
+        list1.map((a) => {
+            console.log(a);
+        })
+        //for in and for of (loop)
+        let obj1 = {
+            Name: "shrey",
+            age: "21"
+        }
+        //for in- key value pair ko object ma use garne
+        console.log("for in");
+        // for(let key in obj1){
+        //     console.log(key);
+        // }
+        for (let key in obj1) {
+            // if(obj1[key]=='21'){
+            //     break;
+            // }
+            console.log(obj1[key]);
+        }
+        //for of - array
+        console.log("for of");
+        const clothes = ["shirt", "crop", "bandana"];
+        for (let a of clothes) {
+            console.log(a);
+        }
+
+        //filter, reduce
+        console.log("filter");
+        let num = [2, 3, 4, 5, 6];
+        let even = num.filter((a) => {
+            return a % 2 == 0;
+        })
+        console.log(even);
+        
+        //divisible by 7
+        let list2=[1,2,3,4,7,8,14];
+        let div=list2.filter((a)=>{
+            return a%7==0;
+        })
+        console.log(div);
+
+        //reduce - sinfle number return garxa
+        console.log("reduce");
+        let rnum=[2,3,4,5];
+        let result=rnum.reduce((a,b)=>{
+            console.log(`h1:${a} & h2: ${b}`);
+            return a+b;
+        });
+        console.log(result);
+
+        //break --> switch, for, while, do loop
+        //continue--> only in loop
+    </script>
+</body>
+
+</html>

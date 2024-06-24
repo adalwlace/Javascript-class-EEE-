@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    factorial of a number
+    prime or not
+    even or not 
+    palindrome
+    -->
+    <script>
+        function factorial(n){
+            let ans=1;
+            if  (n==0||n==1){
+            return ans;
+            }
+            else if(n>1) {
+                for (var i = n;i>=1;i--){
+                    ans=ans*i;
+                }
+                return ans;
+            }
+            else{
+                return "invalid input";
+            }
+        }
+            let n=prompt("enter a number:");
+            ans=factorial(n);
+            document.write(`The factorial of ${n} is  ${ans}`);
+        
+    </script>
+</body>
+</html>

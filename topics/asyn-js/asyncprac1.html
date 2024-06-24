@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="listItem"></div>
+
+
+    <script>
+        function fetchList(data) {
+            let listContainer = document.querySelector('.listItem');
+    
+                listContainer.innerHTML +=
+                    `
+                <div class="listContent">
+                <h3>${data.id}</h3>
+                <ul>
+                <li> ${data.joke}</li>
+                </ul>
+                </div>
+                `
+        
+        }
+
+        async function fectchData() {
+            try{
+            let response = await fetch("https://v2.jokeapi.dev/joke/Programming?type=single");
+            let data = await response.json();
+            fetchList(data);
+            }
+            catch(err){
+                console.log(err);
+            }
+        }
+        fectchData();
+
+    </script>
+</body>
+
+</html>

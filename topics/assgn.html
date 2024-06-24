@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circ{
+            height: 200px;
+            width: 200px;
+            background-color:yellow;
+            border-radius:50%;
+            border: 2px dotted white;
+        }
+        
+        .rect{
+            height: 200px;
+            width: 200px;
+            background-color:yellow;
+            /* border-radius:50%; */
+            border: 2px dotted white;
+        }
+    </style>
+</head>
+<body>
+    <!-- click the count button. when count reaches 10, class "rect" is replaced by a "circ" -->
+    <div id="shape" class="rect"></div>
+    <button id="btn">click here</button>
+
+    <div id="element"></div>
+
+
+    <script>
+        var count=0;
+        var shape=document.querySelector("#shape");
+
+        document.querySelector("#btn").addEventListener("click",function()
+            {
+                count++;
+                if (count===2){
+                    shape.classList.remove("rect");
+                    shape.classList.add("circ");
+
+                }
+            });
+        
+
+            
+// create element and add 5 child, remove 3rd child  
+        var addel=document.querySelector("#element");
+        const element=document.createElement("p");
+        const e2=document.createElement("h1");
+        const e3=document.createElement("p");
+        const e4=document.createElement("h2");
+        const e5=document.createElement("p");
+        addel.append(element);
+        addel.append(e2);
+        addel.append(e3);
+        addel.append(e4);
+        addel.append(e5);
+        addel.removeChild(addel.children[3]);
+</script>
+
+</body>
+</html>

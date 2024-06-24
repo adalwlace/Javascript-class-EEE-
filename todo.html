@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #inpbox {
+            padding: 14px;
+        }
+
+        #dateid {
+            height: 44px;
+        }
+
+        #pushbtn {
+            background-color: green;
+            color: white;
+            padding: 12px;
+            width: 90px;
+            height: 46px;
+            border: none;
+        }
+
+        #delbtn {
+            background-color: red;
+            color: white;
+            padding: 12px;
+            width: 90px;
+            height: 46px;
+            border: none;
+        }
+        #tasks{
+            padding: 30px 20px;
+            width: 100%;
+            /* position: relative; */
+        }
+        .task0{
+            height: 50px;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>TODO LIST</h2>
+    <div class="container">
+        <div id="newtask">
+            <input type="text" name="" id="inpbox" placeholder="enter task">
+            <input type="date" name="" id="dateid" placeholder="/">
+            <button id="pushbtn">ADD</button>
+        </div>
+        <div class="tasks"></div>
+    </div>
+
+    <script>
+
+        document.querySelector("#pushbtn").onclick = function () {
+            if (document.querySelector("#newtask #inpbox").value.length == 0) {
+                alert("Please enter a task");
+            }
+            else {
+                document.querySelector('#tasks').innerHTML +=
+                    `
+                <div class="task0">
+        <span id="taskname">
+            ${document.querySelector("'#newtask #inpbox").value}
+        </span>
+        <button class="delbtn">
+            Delete
+        </button>
+    </div>
+
+                `
+            }
+        }
+
+    </script>
+</body>
+
+</html>

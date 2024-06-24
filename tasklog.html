@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Create a simple task management system. You need to:
+
+    Add tasks to the list.
+    Remove the last task from the list.
+    Print all tasks.
+    Indicate if there are any tasks that match a specific condition (e.g., containing a certain keyword). -->
+    <script>
+        let tasklog=[];
+        function addT(task){
+            tasklog.push(task);
+            console.log(`${task} has been added to task log`);
+        }
+        addT('laundry');
+        addT("organize cupboard");
+        addT("clean room");
+        addT("fold clothes");
+        printT();
+
+
+        function remT(){
+            let removet=tasklog.pop();
+            console.log(`${removet} has been removed from task log`);
+        }
+        remT(); // fold clothes remove garxa
+        remT(); // clean room remove garxa
+        printT();
+
+        function printT(task){
+            tasklog.forEach((task)=>{
+                console.log(task);
+            });
+        }
+        
+        //match keyword
+        //function ma {} diyo bhane 2 or more conditions xa bhanera bujhxa
+        function matchT(keyw){
+            const matchingT=tasklog.some((task)=>{
+                
+               return task.includes(keyw);
+            });
+            // console.log(matchingT);
+            if (matchingT){
+                console.log(`task with ${keyw} found`);
+            }
+            else{
+                console.log(`task with ${keyw} not found`);
+            }
+        }
+        matchT("clean");
+        matchT("cupboard");
+        // printT();
+        
+
+    </script>
+</body>
+
+</html>

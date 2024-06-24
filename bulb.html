@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parag{
+            /* height: calc(100% +22px); */
+            height: 200px;
+            width: 200px;
+            background-color:yellow;
+            border-radius:50%;
+            /* clip-path: circle(); */
+            border: 2px dotted white;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="hey"></p>
+    <div class="re">
+        <p></p>
+        <p></p>
+    </div>
+ 
+    <div class="zth">
+
+    </div>
+    <!-- <img src="" alt=""> -->
+    <script>
+        //changing attribute values
+        var para=document.querySelector("#hey");
+        // para.id="byy";
+
+        //class list (class name pani dine and value)
+
+        setInterval(()=>{
+            para.classList.toggle("parag");
+        },2000);
+
+
+
+
+const remov3=document.querySelector(".re");
+remov3.removeChild(remov3.firstElementChild);
+// remov3.parentNode.removeChild(remov3); to remove parent too
+
+
+
+const z1=document.querySelector(".zth");
+const zth=document.createElement("p");
+const zti=document.createElement('h1');
+const ztj=document.createElement('h2');
+const ztk=document.createElement('h3');
+const ztl=document.createElement('h4');
+
+
+
+z1.append(zth);
+z1.append(zti);
+z1.append(ztj);
+z1.append(ztk);
+z1.append(ztl);
+
+
+// z1.removeChild(z1.children[1]); to remove index 1 element
+z1.removeChild(z1.children[3]);
+</script>
+</body>
+</html>

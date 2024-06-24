@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- make head and tail game. also add a reset button and count of wins and losses. -->
+    <button id="btn" onclick="toss()">head</button>
+    <button id="btn" onclick="toss()">tail</button>
+    <p class="Thead"></p>
+    <p class="Ttail"></p>
+    <!-- <div class="message"></div> -->
+
+
+    <script>
+
+        // const message=document.querySelector(".message");
+        // document.write(message);
+        // const buttons=document.querySelectorAll("button");
+        // document.write(buttons);
+
+
+
+        var head=0;
+        var tail=0;
+
+        function toss(){
+            if (Math.random()>0.5){
+                // document.querySelector("#btn");
+                alert("head");
+                head++;
+                document.querySelector(".Thead").innerHTML=`no. of heads:${head}`;
+            }
+            else{
+                alert("tail");
+                tail++;
+                document.querySelector(".Ttail").innerHTML=`no. of tails:${tail}`;
+            }
+        } 
+    </script>
+</body>
+</html>

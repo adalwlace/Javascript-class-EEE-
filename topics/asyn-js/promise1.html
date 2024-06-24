@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function searchProd(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    resolve("product searched successfully");
+                    
+                }, 1000);
+            }) 
+        }
+        function addToCart(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    resolve("added to cart");
+                }, 1000);
+            })
+        }
+        
+        function paymentFunction(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    resolve("payment successful");
+                }, 1000);
+            })
+        }
+        function orderConfirm(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    resolve("Order Confirmed!")
+                }, 1000);
+            })
+        }
+        //promises handling
+
+        // searchProd().then((value)=>{
+        //     console.log(value);
+        //     return addToCart();
+        // }).then((value1)=>{
+        //     console.log(value1);
+        //     return paymentFunction();
+        // }).then((value2)=>{
+        //     console.log(value2);
+        //     return orderConfirm();
+        // }).then((value3)=>{
+        //     console.log(value3);
+        // })
+
+        //async await
+        async function shopOrder(){
+            let searchShop= await searchProd();
+            console.log(searchShop);
+            let cartShop=await addToCart();
+            console.log(cartShop);
+            let payShop=await paymentFunction();
+            console.log(payShop);
+            let confirmShop=await orderConfirm();
+            console.log(confirmShop);
+        }
+        shopOrder();
+    </script>
+</body>
+</html>

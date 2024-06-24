@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Display</title>
+</head>
+<body>
+    <!-- write a program to show the image in html when count is 10 -->
+    <button id="count" onclick="updateCount()">count</button>
+    <img id="image" src="im1.jpg" alt="Image" style="display: none;">
+
+    <script>
+        let count = 0;
+        function updateCount() {
+            count++;
+            document.getElementById('count').textContent = count;
+            if (count === 10) {
+                document.getElementById('image').style.display = 'block';
+            }
+        }
+        window.onload = function() {
+            updateCount();
+        }
+    </script>
+</body>
+</html>

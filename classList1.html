@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .stylebtn{
+            width: 100px;
+            height: 50px;
+            padding: 6px;
+            color:white;
+            background-color:red;
+            border-radius: 10px;
+            border: none;
+        }
+        .subscribe{ 
+            width: 100px;
+            height: 500px;
+            padding: 6px;
+            color:black;
+
+            background-color: gray;
+            border-radius: 10px;
+        
+        }
+    </style>
+</head>
+<body>
+    <button id="btn" class="stylebtn" onclick="func()">Subscribe</button>
+
+    <script>
+        var subs=document.querySelector("#btn");
+        function func(){
+            if(subs.innerHTML="Subscribe"){
+             subs.innerHTML="Subscribed";
+             subs.classList.add("subscribe");  
+            //  subs.classList.remove("stylebtn");  
+            }
+            else{
+                subs.innerHTML="Subscribe";
+             subs.classList.remove("subcribe");  
+
+            //  subs.classList.add("subscibe");  
+            }
+        }
+
+    </script>
+</body>
+</html>
